@@ -1,168 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello | My Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
-        }
+<title>Hello | My Website</title>
 
-        <div class="sunflower-container">
-    <span class="flower">🌻</span>
-    <span class="flower">🌻</span>
-    <span class="flower">🌻</span>
-    <span class="flower">🌻</span>
-    <span class="flower">🌻</span>
-    <span class="flower">🌻</span>
-    <span class="flower">🌻</span>
-    <span class="flower">🌻</span>
-</div>
+<style>
 
-       body{
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
     margin:0;
     min-height:100vh;
     background:linear-gradient(135deg,#87E0C3,#6DD5ED,#2193B0);
     background-size:cover;
     background-repeat:no-repeat;
     color:white;
+    overflow:hidden;
 }
-        /* Navigation */
-        nav{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:20px 8%;
-            background:rgba(255,255,255,0.1);
-            backdrop-filter:blur(8px);
-        }
 
-        nav h2{
-            font-size:30px;
-        }
+/* Navigation */
 
-        nav ul{
-            display:flex;
-            list-style:none;
-        }
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(8px);
+}
 
-        nav ul li{
-            margin-left:25px;
-        }
+nav h2{
+    font-size:30px;
+}
 
-        nav ul li a{
-            color:white;
-            text-decoration:none;
-            font-size:18px;
-            transition:.3s;
-        }
+nav ul{
+    display:flex;
+    list-style:none;
+}
 
-        nav ul li a:hover{
-            color:yellow;
-        }
+nav ul li{
+    margin-left:25px;
+}
 
-        /* Hero Section */
-        .hero{
-            height:90vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            padding:20px;
-        }
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    transition:.3s;
+}
 
-        .hero h1{
-            font-size:70px;
-            margin-bottom:20px;
-        }
+nav ul li a:hover{
+    color:yellow;
+}
 
-        .hero p{
-            font-size:22px;
-            margin-bottom:30px;
-            max-width:700px;
-            line-height:1.6;
-        }
+/* Hero */
 
-        .btn{
-            display:inline-block;
-            text-decoration:none;
-            color:white;
-            background:#ff4b5c;
-            padding:15px 35px;
-            border-radius:40px;
-            font-size:20px;
-            transition:.3s;
-        }
+.hero{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
 
-        .btn:hover{
-            background:#ff1e38;
-            transform:scale(1.05);
-        }
+.hero h1{
+    font-size:70px;
+    margin-bottom:20px;
+}
 
-        footer{
-            text-align:center;
-            padding:20px;
-            background:rgba(0,0,0,0.2);
-        }
+.hero p{
+    font-size:22px;
+    margin-bottom:30px;
+}
 
-        @media(max-width:768px){
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    background:#ff4b5c;
+    padding:15px 35px;
+    border-radius:40px;
+    font-size:20px;
+    transition:.3s;
+}
 
-            nav{
-                flex-direction:column;
-            }
+.btn:hover{
+    background:#ff1e38;
+    transform:scale(1.05);
+}
 
-            nav ul{
-                margin-top:15px;
-            }
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(0,0,0,.2);
+}
 
-            .hero h1{
-                font-size:45px;
-            }
+/* ========================= */
+/* SUNFLOWER ANIMATION */
+/* ========================= */
 
-            .hero p{
-                font-size:18px;
-            }
+#sunflower-container{
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    pointer-events:none;
+}
 
-        }
+.sunflower{
+    position:absolute;
+    bottom:-60px;
+    left:0;
+    animation:floatUp linear forwards;
+}
 
-    </style>
+@keyframes floatUp{
+
+0%{
+    transform:translate(0,0) rotate(0deg);
+    opacity:0;
+}
+
+10%{
+    opacity:1;
+}
+
+50%{
+    transform:translate(60px,-50vh) rotate(180deg);
+}
+
+100%{
+    transform:translate(140px,-120vh) rotate(360deg);
+    opacity:0;
+}
+
+}
+
+@media(max-width:768px){
+
+nav{
+    flex-direction:column;
+}
+
+nav ul{
+    margin-top:15px;
+}
+
+.hero h1{
+    font-size:45px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+}
+
+</style>
 
 </head>
+
 <body>
 
-<nav>
-    <h2>🌐Hieeee Jyoti here.......🌻</h2>
+<!-- Sunflower Container -->
+<div id="sunflower-container"></div>
 
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
+<nav>
+
+<h2>🌐 Hieeee Jyoti here.......🌻</h2>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Gallery</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
 </nav>
 
 <section class="hero">
 
-    <div>
-        <h1>Hello! 👋</h1>
+<div>
 
-        <p>
-            Welcome back :)
-        </p>
+<h1>Hello! 👋</h1>
 
-        <a href="#" class="btn">Ignore if you can</a>
-    </div>
+<p>Welcome back :)</p>
+
+<a href="#" class="btn">Ignore if you can</a>
+
+</div>
 
 </section>
 
 <footer>
-    <p>© 2026 My Website | Made with ❤️</p>
+
+<p>© 2026 My Website | Made with ❤️</p>
+
 </footer>
+
+<script>
+
+const container = document.getElementById("sunflower-container");
+
+function createFlower(){
+
+    const flower = document.createElement("span");
+
+    flower.className="sunflower";
+
+    flower.innerHTML="🌻";
+
+    // Random size
+    const size = Math.random()*25 + 30;
+    flower.style.fontSize=size+"px";
+
+    // Bottom-left position
+    flower.style.left=Math.random()*120+"px";
+
+    // Random speed
+    flower.style.animationDuration=(6+Math.random()*4)+"s";
+
+    container.appendChild(flower);
+
+    flower.addEventListener("animationend",()=>{
+        flower.remove();
+    });
+
+}
+
+setInterval(createFlower,400);
+
+</script>
 
 </body>
 </html>
+  
+          
+      
+      
