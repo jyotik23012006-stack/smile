@@ -165,6 +165,154 @@ nav ul{
 }
 
 }
+    /* ===================================== */
+/* RAINBOW CATERPILLAR */
+/* ===================================== */
+
+.rainbow-caterpillar{
+    position:absolute;
+    top:170px;
+    left:-500px;
+    display:flex;
+    align-items:center;
+    z-index:999;
+    animation:crawl 20s linear infinite;
+}
+
+.head,
+.body{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    margin-left:-7px;
+    position:relative;
+}
+
+.head{
+    background:#66bb6a;
+}
+
+/* Rainbow colors */
+
+.red{background:#ff4d4d;}
+.orange{background:#ff9800;}
+.yellow{background:#ffd600;}
+.green{background:#4caf50;}
+.blue{background:#42a5f5;}
+.indigo{background:#5c6bc0;}
+.violet{background:#ab47bc;}
+
+/* Eyes */
+
+.eye{
+    position:absolute;
+    width:7px;
+    height:7px;
+    background:white;
+    border-radius:50%;
+    top:11px;
+}
+
+.left-eye{
+    left:8px;
+}
+
+.right-eye{
+    right:8px;
+}
+
+.eye::after{
+    content:"";
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:black;
+    border-radius:50%;
+    top:2px;
+    left:2px;
+}
+
+/* Smile */
+
+.head::after{
+    content:"";
+    position:absolute;
+    width:14px;
+    height:8px;
+    border-bottom:3px solid #222;
+    border-radius:0 0 15px 15px;
+    left:12px;
+    bottom:8px;
+}
+
+/* Antennae */
+
+.antenna{
+    position:absolute;
+    width:3px;
+    height:16px;
+    background:#444;
+    top:-12px;
+}
+
+.left-ant{
+    left:9px;
+    transform:rotate(-30deg);
+}
+
+.right-ant{
+    right:9px;
+    transform:rotate(30deg);
+}
+
+.antenna::after{
+    content:"";
+    position:absolute;
+    width:8px;
+    height:8px;
+    background:#ff69b4;
+    border-radius:50%;
+    top:-4px;
+    left:-2px;
+}
+
+/* Wiggle */
+
+.head{
+    animation:wiggle .4s infinite alternate;
+}
+
+.body:nth-child(2){animation:wiggle .45s infinite alternate;}
+.body:nth-child(3){animation:wiggle .5s infinite alternate;}
+.body:nth-child(4){animation:wiggle .55s infinite alternate;}
+.body:nth-child(5){animation:wiggle .6s infinite alternate;}
+.body:nth-child(6){animation:wiggle .65s infinite alternate;}
+.body:nth-child(7){animation:wiggle .7s infinite alternate;}
+.body:nth-child(8){animation:wiggle .75s infinite alternate;}
+
+@keyframes wiggle{
+
+    from{
+        transform:translateY(-4px);
+    }
+
+    to{
+        transform:translateY(4px);
+    }
+
+}
+
+@keyframes crawl{
+
+    0%{
+        left:-500px;
+    }
+
+    100%{
+        left:110%;
+    }
+
+}
 
 </style>
 
@@ -187,6 +335,27 @@ nav ul{
 </ul>
 
 </nav>
+    <div class="rainbow-caterpillar">
+
+    <div class="head">
+
+        <div class="eye left-eye"></div>
+        <div class="eye right-eye"></div>
+
+        <div class="antenna left-ant"></div>
+        <div class="antenna right-ant"></div>
+
+    </div>
+
+    <div class="body red"></div>
+    <div class="body orange"></div>
+    <div class="body yellow"></div>
+    <div class="body green"></div>
+    <div class="body blue"></div>
+    <div class="body indigo"></div>
+    <div class="body violet"></div>
+
+</div>
 
 <section class="hero">
 
